@@ -75,3 +75,32 @@ main {
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+.rolls-count-wrapper {
+  background-color: lightgray;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+p.rolls-count-title {
+  margin: 0;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+p.rolls-count {
+  margin: 0;
+  padding: 5px 0;
+}
+
+p.win-text {
+  margin: 0;
+  padding: 5px 0;
+  font-style: italic;
+}

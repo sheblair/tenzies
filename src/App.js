@@ -7,6 +7,7 @@ export default function App() {
 
     const [dice, setDice] = useState(allNewDice())
     const [tenzies, setTenzies] = useState(false)
+    const [rolls, setRolls] = useState(0)
     
     useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -33,11 +34,6 @@ export default function App() {
         return newDice
     }
     
-/**
- * Challenge: Allow the user to play a new game when the
- * button is clicked and they've already won
- */
-    
     function rollDice() {
         if (!tenzies) {
             setDice(oldDice => oldDice.map(die => {
@@ -49,6 +45,7 @@ export default function App() {
             setTenzies(false)
             setDice(allNewDice())
         }
+        setRolls(rolls + 1)
     }
     
     function holdDice(id) {
@@ -83,6 +80,11 @@ export default function App() {
             >
                 {tenzies ? "New Game" : "Roll"}
             </button>
+            <div className="rolls-count-wrapper">
+                <p className="rolls-count-title">Number of Rolls:</p>
+                <p className="rolls-count">{rolls}</p>
+                {tenzies && <p className="win-text">You won in {rolls} rolls!</p>}
+            </div>
         </main>
     )
 }
