@@ -41,11 +41,13 @@ export default function App() {
                 die :
                 generateNewDie()
             }))
+            setRolls(rolls + 1)
         } else {
             setTenzies(false)
             setDice(allNewDice())
+            setRolls(0)
         }
-        setRolls(rolls + 1)
+        
     }
     
     function holdDice(id) {
